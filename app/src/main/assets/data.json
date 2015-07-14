@@ -1,0 +1,44 @@
+[
+  {
+    "id": 0,
+    "long": 40.0,
+    "lat": 30.0,
+    "name": "san Grato"
+  },
+  {
+    "id": 1,
+    "long": 40.0,
+    "lat": 30.0,
+    "name": "bench 2"
+  },
+  {
+    "id": 2,
+    "long": 40.0,
+    "lat": 30.0,
+    "name": "bench 3"
+  },
+  {
+    "id": 3,
+    "long": 40.0,
+    "lat": 30.0,
+    "name": "bench 4"
+  },
+  {
+    "id": 4,
+    "long": 40.0,
+    "lat": 30.0,
+    "name": "bench 5"
+  },
+  {
+    "id": 5,
+    "long": 40.0,
+    "lat": 30.0,
+    "name": "bench 6"
+  },
+  {
+    "id": 6,
+    "long": 40.0,
+    "lat": 30.0,
+    "name": "bench 7"
+  }
+]
