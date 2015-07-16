@@ -5,7 +5,6 @@ package com.application.material.bigbench.app.adapters;
  */
 
 import android.app.Activity;
-import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.support.v4.app.Fragment;
@@ -13,12 +12,10 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 import com.application.material.bigbench.app.R;
-import com.application.material.bigbench.app.fragments.MapFragment;
+import com.application.material.bigbench.app.fragments.BenchMapFragment;
 import com.application.material.bigbench.app.models.Bench;
 import com.application.material.bigbench.app.utils.Utils;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -40,6 +37,7 @@ import java.util.ArrayList;
 public class SectionsPagerAdapter extends FragmentPagerAdapter implements OnMapReadyCallback, ViewPager.OnPageChangeListener {
     private final Activity mActivityRef;
     private final Gson mGson;
+    private final FragmentManager mFragmentManager;
     private ArrayList<Bench> mBenchList = new ArrayList<Bench>();
 
     private static final String EMPTY_BENCH_NAME = "no name";
@@ -47,6 +45,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter implements OnMapR
 
     public SectionsPagerAdapter(FragmentManager fm, Activity activity) {
         super(fm);
+        mFragmentManager = fm;
         mActivityRef = activity;
         mGson = new Gson();
         onInitData();
@@ -64,7 +63,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter implements OnMapR
 
     @Override
     public Fragment getItem(int position) {
-        SupportMapFragment mapFragment = MapFragment.newInstance(position + 1);
+        SupportMapFragment mapFragment = BenchMapFragment.newInstance(position + 1);
         try {
             mapFragment.getMapAsync(this);
         } catch (Exception e) {
@@ -100,17 +99,9 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter implements OnMapR
     @Override
     public void onPageSelected(int position) {
         try {
-            switch (position) {
-                case 0 :
-                    setActionbarColorCustom(R.color.material_red_400, R.color.material_red_600);
-                    break;
-                case 1 :
-                    setActionbarColorCustom(R.color.material_yellow_400, R.color.material_yellow_600);
-                    break;
-                case 2 :
-                    setActionbarColorCustom(R.color.material_green_400, R.color.material_green_600);
-                    break;
-            }
+            int[] colorArray = Utils.getColorArrayByPosition(position);
+            setActionbarColorCustom(colorArray[0], colorArray[1]);
+            setCheckVisitedBenchButtonColorWrapper(colorArray[0], position);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -137,4 +128,19 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter implements OnMapR
     public void onPageScrollStateChanged(int state) {
 
     }
+
+    private static String getFragmentNameByPagerAdapter(int viewPagerId, int index) {
+        return "android:switcher:" + viewPagerId + ":" + index;
+    }
+
+    public void setCheckVisitedBenchButtonColorWrapper(int colorRes, int index) {
+        try {
+            BenchMapFragment fragment = (BenchMapFragment) mFragmentManager
+                    .findFragmentByTag(getFragmentNameByPagerAdapter(R.id.pagerId, index));
+            fragment.setCheckVisitedBenchButtonColor(colorRes);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }

@@ -289,6 +289,12 @@
     <color name="material_black">#000000</color>
     <color name="material_white">#FFFFFF</color>
 
+    <color name="material_gold_300">#FFE48D</color>
+    <color name="material_gold_400">#EDCB5D</color>
+    <color name="material_gold_500">#D4AF37</color>
+    <color name="material_gold_600">#B18E1A</color>
+    <color name="material_gold_700">#8B6B04</color>
+
     <!-- Colors for the app -->
     <color name="material_primary">@color/material_indigo_500</color>
     <color name="material_primary_dark">@color/material_indigo_700</color>

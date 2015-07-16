@@ -1,5 +1,6 @@
 package com.application.material.bigbench.app;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.*;
 import android.os.Bundle;
@@ -31,13 +32,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarId);
-        toolbar.setTitle(R.string.app_name);
+        toolbar.setTitle(R.string.app_title);
 //        toolbar.inflateMenu(R.menu.menu_main);
         setSupportActionBar(toolbar);
 
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(), this);
         // Set up the ViewPager with the sections adapter.
-        mViewPager = (ViewPager) findViewById(R.id.pager);
+        mViewPager = (ViewPager) findViewById(R.id.pagerId);
         mViewPager.setAdapter(mSectionsPagerAdapter);
         mViewPager.addOnPageChangeListener(mSectionsPagerAdapter);
 
@@ -60,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.action_settings) {
-            return true;
+            startActivity(new Intent(this, SettingsActivity.class));
         }
 
         return super.onOptionsItemSelected(item);

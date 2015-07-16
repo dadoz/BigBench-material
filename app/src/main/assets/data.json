@@ -9,36 +9,42 @@
     "id": 1,
     "long": 40.0,
     "lat": 30.0,
-    "name": "bench 2"
+    "name": "Farigliano"
   },
   {
     "id": 2,
     "long": 40.0,
     "lat": 30.0,
-    "name": "bench 3"
+    "name": "Clavesana"
   },
   {
     "id": 3,
     "long": 40.0,
     "lat": 30.0,
-    "name": "bench 4"
+    "name": "Clavesana 2"
   },
   {
     "id": 4,
     "long": 40.0,
     "lat": 30.0,
-    "name": "bench 5"
+    "name": "Carru'"
   },
   {
     "id": 5,
     "long": 40.0,
     "lat": 30.0,
-    "name": "bench 6"
+    "name": "S.Rosalia Alba"
   },
   {
     "id": 6,
     "long": 40.0,
     "lat": 30.0,
-    "name": "bench 7"
+    "name": "Vezza d'Alba"
+  },
+  {
+    "id": 7,
+    "long": 40.0,
+    "lat": 30.0,
+    "name": "Piozzo"
   }
 ]
