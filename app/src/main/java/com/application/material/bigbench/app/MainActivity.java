@@ -8,6 +8,8 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.*;
+import butterknife.Bind;
+import butterknife.ButterKnife;
 import com.application.material.bigbench.app.adapters.SectionsPagerAdapter;
 
 
@@ -25,34 +27,36 @@ public class MainActivity extends AppCompatActivity {
     /**
      * The {@link ViewPager} that will host the section contents.
      */
-    ViewPager mViewPager;
+
+    @Bind(R.id.toolbarId) Toolbar mToolbar;
+    @Bind(R.id.tabLayoutId) TabLayout mTabLayout;
+    @Bind(R.id.pagerId) ViewPager mViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarId);
-        toolbar.setTitle(R.string.app_title);
-//        toolbar.inflateMenu(R.menu.menu_main);
-        setSupportActionBar(toolbar);
+        ButterKnife.bind(this);
+
+        onInitView();
+    }
+
+    private void onInitView() {
+        mToolbar.setTitle(R.string.app_title);
+        setSupportActionBar(mToolbar);
 
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(), this);
-        // Set up the ViewPager with the sections adapter.
-        mViewPager = (ViewPager) findViewById(R.id.pagerId);
         mViewPager.setAdapter(mSectionsPagerAdapter);
         mViewPager.addOnPageChangeListener(mSectionsPagerAdapter);
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayoutId);
         for (int i = 0; i < mSectionsPagerAdapter.getCount(); i++) {
-            tabLayout.addTab(tabLayout.newTab().setText(mSectionsPagerAdapter.getPageTitle(i)));
-            tabLayout.setupWithViewPager(mViewPager);
+            mTabLayout.addTab(mTabLayout.newTab().setText(mSectionsPagerAdapter.getPageTitle(i)));
+            mTabLayout.setupWithViewPager(mViewPager);
         }
-
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return super.onCreateOptionsMenu(menu);
     }

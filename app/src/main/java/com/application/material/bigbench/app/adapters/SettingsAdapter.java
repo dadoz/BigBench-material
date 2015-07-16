@@ -31,9 +31,9 @@ public class SettingsAdapter extends ArrayAdapter<Setting>{
         }
 
         TextView settingTitle = (TextView) convertView.findViewById(R.id.settingTitleTextId);
-        settingTitle.setText("title new");
+        settingTitle.setText(mSettingList.get(position).getTitle());
         TextView settingDescription = (TextView) convertView.findViewById(R.id.settingDescriptionTextId);
-        settingDescription.setText("description new");
+        settingDescription.setText(mSettingList.get(position).getDescription());
 
         return convertView;
     }

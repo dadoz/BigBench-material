@@ -5,14 +5,15 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.view.animation.AccelerateDecelerateInterpolator;
 
 /**
  * Created by davide on 16/07/15.
  */
 public class FabCustom extends android.support.design.widget.FloatingActionButton {
     private boolean mVisible;
-    private TimeInterpolator mInterpolator;
-    private int TRANSLATE_DURATION_MILLIS;
+    private TimeInterpolator mInterpolator = new AccelerateDecelerateInterpolator();
+    private int TRANSLATE_DURATION_MILLIS = 200;
 
     /**
      *

@@ -27,11 +27,6 @@ public class SettingsActivity extends AppCompatActivity {
         setContentView(R.layout.settings_layout);
         ButterKnife.bind(this);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.settingsToolbarId);
-        toolbar.setTitle(R.string.app_settings_title);
-//        toolbar.inflateMenu(R.menu.menu_main);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         onInitView();
     }
 
@@ -46,6 +41,11 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     private void onInitView() {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.settingsToolbarId);
+        toolbar.setTitle(R.string.app_settings_title);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         ArrayList<Setting> settingList = new ArrayList<Setting>();
         settingList.add(new Setting("title1", "description 1"));
         mListView.setAdapter(new SettingsAdapter(this, R.layout.setting_item, settingList));
