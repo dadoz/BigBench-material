@@ -3,48 +3,64 @@
     "id": 0,
     "long": 40.0,
     "lat": 30.0,
-    "name": "san Grato"
+    "name": "san Grato",
+    "color": "eeffff",
+    "visited": true
   },
   {
     "id": 1,
     "long": 40.0,
     "lat": 30.0,
-    "name": "Farigliano"
+    "name": "Farigliano",
+    "color": "eeffff",
+    "visited": false
   },
   {
     "id": 2,
     "long": 40.0,
     "lat": 30.0,
-    "name": "Clavesana"
+    "name": "Clavesana",
+    "color": "eeffff",
+    "visited": false
   },
   {
     "id": 3,
     "long": 40.0,
     "lat": 30.0,
-    "name": "Clavesana 2"
+    "name": "Clavesana 2",
+    "color": "eeffff",
+    "visited": false
   },
   {
     "id": 4,
     "long": 40.0,
     "lat": 30.0,
-    "name": "Carru'"
+    "name": "Carru'",
+    "color": "eeffff",
+    "visited": false
   },
   {
     "id": 5,
     "long": 40.0,
     "lat": 30.0,
-    "name": "S.Rosalia Alba"
+    "name": "S.Rosalia Alba",
+    "color": "eeffff",
+    "visited": false
   },
   {
     "id": 6,
     "long": 40.0,
     "lat": 30.0,
     "name": "Vezza d'Alba"
+    "color": "eeffff",
+    "visited": false
   },
   {
     "id": 7,
     "long": 40.0,
     "lat": 30.0,
-    "name": "Piozzo"
+    "name": "Piozzo",
+    "color": "eeffff",
+    "visited": false
   }
 ]

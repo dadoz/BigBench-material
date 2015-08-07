@@ -36,9 +36,9 @@ public class BenchMapFragment extends SupportMapFragment implements View.OnClick
     private int mSectionNumber;
     private String CHECK_VISITED_ARRAY = "CHECK_VISITED_ARRAY";
     private String BIG_BENCH_SHAREDPREF = "BIG_BENCH_SHAREDPREF";
-    @Bind(R.id.mapLayoutOverId) private View mMapLayoutOver;
-    @Bind(R.id.checkVisitedButtonId) private FabCustom mCheckVisitedButton;
-    @Bind(R.id.uncheckVisitedBenchLayoutId) private FabCustom mUncheckVisitedBenchLayout;
+    @Bind(R.id.mapLayoutOverId) View mMapLayoutOver;
+    @Bind(R.id.checkVisitedButtonId) FabCustom mCheckVisitedButton;
+    @Bind(R.id.uncheckVisitedBenchLayoutId) FabCustom mUncheckVisitedBenchLayout;
 
     /**
      * Returns a new instance of this fragment for the given section
